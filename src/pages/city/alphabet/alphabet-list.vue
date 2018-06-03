@@ -54,14 +54,15 @@ export default {
     // 实现功能
     // 解析父级传入的城市数据json；根据父级传入的字母跳转到相应位置；根据父级传入的文本筛选列表；
     GetCityList() {
-      let _this = this;
       axios.get('/static/mock/city.json').then(res => {
         this.cityList = res.data.data.cities
         // console.log(this.cityList)
 
-        _this.$nextTick(() => {
-          // 滚动到初始设定位置
-          this.ScrollToLetter(this.letter)
+        this.$nextTick(() => {
+          setTimeout(() => {
+            // 滚动到初始设定位置
+            this.ScrollToLetter(this.letter)
+          });
         })
 
       })
