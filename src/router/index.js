@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import CityList from '../pages/city/alphabet/alphabet-list'
+import City from '../pages/city/city'
 
 Vue.use(Router)
 
@@ -12,9 +12,9 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld
     }, {
-      path: '/city-list',
-      name: 'CityList',
-      component: CityList
+      path: '/city',
+      name: 'City',
+      component: City
     }
   ]
 })
