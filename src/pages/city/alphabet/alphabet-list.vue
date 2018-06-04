@@ -26,6 +26,7 @@ export default {
   },
   watch: {
     letter() {
+      // console.log('letter change to: ', this.letter)
       this.ScrollToLetter(this.letter)
     }
   },

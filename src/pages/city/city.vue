@@ -5,7 +5,7 @@
       <alphabet-list filterStr="" :letter="currentLetter"></alphabet-list>
     </div>
     <div class="alphabet-controller-wrap">
-      <alphabet-controller :letterList="letterList"></alphabet-controller>
+      <alphabet-controller :letterList="letterList" :letter.sync="currentLetter"></alphabet-controller>
     </div>
   </div>
 </template>
