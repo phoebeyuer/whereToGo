@@ -30,11 +30,23 @@ export default {
     }
   },
   mounted () {
-    // 初始化 better-scroll
-    this.scroll = new BScroll(this.$refs.listWrap)
-
     // 获取城市列表数据
-    this.GetCityList()
+    this.GetCityList().then(res => {
+      // 下次 Dom 更新时
+      this.$nextTick(() => {
+        // 初始化 better-scroll
+        this.scroll = new BScroll(this.$refs.listWrap, {
+          mouseWheel: {
+            speed: 20,
+            invert: false,
+            easeTime: 300
+          }
+        })
+
+        // 滚动到初始设定位置
+        this.ScrollToLetter(this.letter)
+      })
+    })
   },
   computed: {
     // 根据搜索传入的字符串，过滤城市列表
@@ -54,19 +66,12 @@ export default {
     // 实现功能
     // 解析父级传入的城市数据json；根据父级传入的字母跳转到相应位置；根据父级传入的文本筛选列表；
     GetCityList() {
-      axios.get('/static/mock/city.json').then(res => {
+      return axios.get('/static/mock/city.json').then(res => {
         this.cityList = res.data.data.cities
         // console.log(this.cityList)
-
-        this.$nextTick(() => {
-          setTimeout(() => {
-            // 滚动到初始设定位置
-            this.ScrollToLetter(this.letter)
-          });
-        })
-
       })
     },
+    // 滚动到相应字母的位置
     ScrollToLetter(letter) {
       const element = this.$refs[letter][0]
       this.scroll.scrollToElement(element, 300)
