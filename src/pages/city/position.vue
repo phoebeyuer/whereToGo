@@ -3,7 +3,8 @@
         <div class="curCity">
             <p class="cur-city-title">当前城市</p>
             <div class="cur-city-content">
-                <div class="box">{{ curCity }}</div>
+                <div class="box" v-if="curCity">{{ curCity }}</div>
+                <div class="box" v-else>加载中</div>
             </div>
         </div>
         <div class="hotCity">
