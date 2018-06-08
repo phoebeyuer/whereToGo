@@ -1,6 +1,6 @@
 <template>
 	<div class="city">
-		<cityHeader></cityHeader>
+		<cityHeader :cities="cities"></cityHeader>
 <!-- 		<citySearch></citySearch>
 		<cityList></cityList>
 		<cityAlphabet></cityAlphabet> -->
@@ -8,6 +8,7 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	import cityHeader from "./components/header"
 	export default{
 		components: {
@@ -15,12 +16,24 @@
 		},
 		data(){
 			return{
-
+				cities: {}
 			}
 		},
+		mounted(){
+			this.getCityData()
+		},
 		methods: {
-
+			getCityData(){
+				axios.get('/api/index').then((res)=>{
+					var cityData = res.data;
+					this.cities = cityData.data.data.cities;
+					// console.log(this.cities);
+					// this.id = cityData.data.data.cities.A[0].id;
+					// console.log(this.id);
+				});
+			}
 		}
+
 	}
 </script>
 
