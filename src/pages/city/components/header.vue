@@ -71,16 +71,20 @@
 					/*函数截流，输入后超过50ms再发送请求匹配*/
 					else {
 						this.timer = setTimeout(()=>{
+						var firstLetter = ConvertUpLetter(this.inputContent).substr(0, 1);  //获取输入城市的首字母
 						for(let i in this.cities){
-							this.cities[i].forEach((val)=> {
+							/*仅遍历该首字母下的城市列表数据*/
+							if(i.charCodeAt() == firstLetter.charCodeAt() || (i.charCodeAt()+32) == firstLetter.charCodeAt()){
+								this.cities[i].forEach((val)=> {
 								if(val.name.indexOf(this.inputContent) > -1 || val.spell.indexOf(this.inputContent) > -1 ){
 									arrZoom.push(val)
 								}     //中文及全拼匹配
 								else if(val.spell.indexOf(ConvertPinyin(this.inputContent)) > -1 || ConvertFirstLetter(val.name).indexOf(this.inputContent) > -1 || ConvertUpLetter(val.name).indexOf(this.inputContent) > -1){
 									arrZoom.push(val)
 								}    //同音字匹配及首字母大小写匹配
-							var rech = /[u00-uff]/;
-							});
+								var rech = /[u00-uff]/;
+								})
+							}
 						}
 						this.items = arrZoom
 					},50)}
