@@ -94,11 +94,11 @@ export default {
         .letter-name{
           color: #00BCD4;
           width: 100%;
-          line-height: 0.2rem;
+          line-height: 20px;
           text-align: center;
         }
         .letter-bubble{
-          @bubbleSize: 0.36rem;
+          @bubbleSize: 36px;
           @bubbleColor: #00BCD4;
 
           position: absolute;

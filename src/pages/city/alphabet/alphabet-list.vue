@@ -88,22 +88,22 @@ export default {
     height: 100%;
     width: 100%;
     .city-list{
-      font-size: 0.14rem;
+      font-size: 14px;
       margin: 0;
       .city-initials{
         background-color: #eee;
         color: #666;
-        height: 0.32rem;
-        line-height: 0.32rem;
-        padding: 0 0.12rem;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 12px;
       }
       .city-item{
-        border-bottom: 0.01rem solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
         color: #666;
-        height: 0.36rem;
-        line-height: 0.36rem;
+        height: 36px;
+        line-height: 36px;
         margin: 0;
-        padding: 0 0.12rem;
+        padding: 0 12px;
       }
     }
   }
