@@ -52,6 +52,7 @@ export default {
     .position{
         font-size: 14px;
         color: #333;
+        margin-top: 78px;
     }
     .cur-city-title, .hot-city-title{
         height: 30px;

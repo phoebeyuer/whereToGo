@@ -1,7 +1,8 @@
 <template>
 	<div class="city">
 		<cityHeader :cities="cities"></cityHeader>
-<!-- 		<citySearch></citySearch>
+		<city-position></city-position>
+<!-- 	<citySearch></citySearch>
 		<cityList></cityList>
 		<cityAlphabet></cityAlphabet> -->
 	</div>
@@ -10,9 +11,11 @@
 <script>
 	import axios from 'axios'
 	import cityHeader from "./components/header"
+	import cityPosition from "./components/position"
 	export default{
 		components: {
 			cityHeader,
+			cityPosition
 		},
 		data(){
 			return{

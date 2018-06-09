@@ -11,7 +11,7 @@
 		</div>
 		<div class="search-result" v-show="showCity">
 			<ul>
-				<li class="city-item" v-for="(item,index) in items" @click = "cityName(index)" ref="itemtest">{{item.name}}</li>
+				<li class="city-item" :key="index" v-for="(item,index) in items" @click = "cityName(index)" ref="itemtest">{{item.name}}</li>
 <!-- 				<li class="city-item" index = "2" @click = "cityName">广东省</li> -->
 			</ul>
 		</div>
@@ -110,6 +110,7 @@
 		height: 78px;
 		background: #00bcd4;
 		margin: 0px;
+		text-align: center;
 	}
 
 	.title {

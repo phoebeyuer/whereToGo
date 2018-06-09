@@ -11,14 +11,12 @@
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+*{margin: 0;padding: 0;}
   html {
     line-height: 1.4;
     font-size: 625%;
+    height: 100%;
+    width: 100%;
   }
   body,
   input,
