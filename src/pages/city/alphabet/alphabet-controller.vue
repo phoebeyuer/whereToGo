@@ -114,7 +114,7 @@ export default {
           text-align: center;
           transform: translate(-100%, -50%);
           opacity: 0;
-          transition: opacity 0.3s;
+          // transition: opacity 0.3s;
           &.show{
             opacity: 1;
           }
