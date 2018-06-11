@@ -111,6 +111,7 @@
 		background: #00bcd4;
 		margin: 0px;
 		text-align: center;
+		z-index: 999;
 	}
 
 	.title {

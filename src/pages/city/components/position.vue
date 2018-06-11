@@ -4,18 +4,13 @@
             <p class="cur-city-title">当前城市</p>
             <div class="cur-city-content">
                 <div class="box" v-if="curCity">{{ curCity }}</div>
-                <div class="box" v-else>加载中</div>
+                <div class="box" v-else>加载中...</div>
             </div>
         </div>
         <div class="hotCity">
             <p class="hot-city-title">热门城市</p>
             <ul class="hot-city-wrap">
-                <li><div>北京</div></li>
-                <li><div>上海</div></li>
-                <li><div>西安</div></li>
-                <li><div>三亚</div></li>
-                <li><div>丽江</div></li>
-                <li><div>桂林</div></li>
+                <li v-for="city in hotCities" :key="city.id" @click="curCity = city.name"><div>{{city.name}}</div></li>
             </ul>
         </div>
         <div id="allmap"></div>
@@ -23,15 +18,21 @@
 </template>
 
 <script>
-// import BMap from 'BMap'
+import axios from 'axios';
 export default {
+    props: {
+        hotCities: {
+            type: Array,
+            default: []
+        }
+    },
     data() {
         return {
-            curCity: ''
+            curCity: '',
         }
     },
     created() {
-
+        this.initHotCity();
     },
     mounted() {
         let vm = this;
@@ -43,7 +44,16 @@ export default {
         myCity.get(myFun);
     },
     methods: {
-
+        initHotCity() {
+            // axios.get('static/mock/city.json').then(res => {
+            //     let data = res.data;
+            //     if (data.ret && data.data.hotCities.length) {
+            //         this.hotCities = data.data.hotCities;
+            //     }
+            // }).catch(err => {
+            //     console.log(err);
+            // })
+        }
     }
 }
 </script>
@@ -52,7 +62,6 @@ export default {
     .position{
         font-size: 14px;
         color: #333;
-        margin-top: 78px;
     }
     .cur-city-title, .hot-city-title{
         height: 30px;
@@ -77,6 +86,8 @@ export default {
         display: flex;
         flex-wrap: wrap;
         list-style: none;
+        padding-bottom: 12px;
+        padding-right: 40px;
     }
     .hot-city-wrap li {
         width: 33.3%;
@@ -89,10 +100,11 @@ export default {
     }
     .hot-city-wrap li  div{
         height: 24px;
-        width: 105px;
+        width: 104px;
         text-align: center;
         line-height: 24px;
         border: 1px solid #ccc;
         border-radius: 6px;
+        box-sizing: border-box;
     }
 </style>

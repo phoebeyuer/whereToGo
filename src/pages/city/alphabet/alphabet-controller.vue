@@ -29,7 +29,6 @@ export default {
     console.log('startY: ', this.startY)
   },
   computed: {
-
   },
   updated () {
     this.startY = this.$refs['A'][0].offsetTop
@@ -50,7 +49,6 @@ export default {
     handleTouchMove(e) {
       // 只有从字母表上开始滑动时才触发
       if (!this.touching) return
-
       this.checkTargetLetter(e)
     },
     handleTouchEnd() {
@@ -60,7 +58,6 @@ export default {
       if (this.timer) {
         clearTimeout(this.timer)
       }
-
       this.timer = setTimeout(() => {
         const touchY = e.touches[0].clientY
         const index = Math.floor((touchY - this.startY) / 20)
@@ -90,17 +87,15 @@ export default {
         position: relative;
         cursor: pointer;
         text-align: center;
-
         .letter-name{
           color: #00BCD4;
           width: 100%;
-          line-height: 0.2rem;
+          line-height: 20px;
           text-align: center;
         }
         .letter-bubble{
-          @bubbleSize: 0.36rem;
+          @bubbleSize: 36px;
           @bubbleColor: #00BCD4;
-
           position: absolute;
           top: 50%;
           left: 0;
@@ -114,14 +109,13 @@ export default {
           text-align: center;
           transform: translate(-100%, -50%);
           opacity: 0;
-          transition: opacity 0.3s;
+          // transition: opacity 0.3s;
           &.show{
             opacity: 1;
           }
           &.hide{
             opacity: 0;
           }
-
           &::after{
             content: ' ';
             border: @bubbleSize/2*0.707 solid @bubbleColor;
