@@ -47,10 +47,10 @@
 					var cityData = res.data;
 					this.cities = cityData.data.data.cities;
 					this.hotCities = cityData.data.data.hotCities;
-					this.$nextTick(() => {
-						let wrap = this.$refs.scroll;
-						let scroll = new BScroll(wrap);
-					})
+					// this.$nextTick(() => {
+					// 	let wrap = this.$refs.scroll;
+					// 	let scroll = new BScroll(wrap);
+					// })
 					// console.log(this.cities);
 					// this.id = cityData.data.data.cities.A[0].id;
 					// console.log(this.id);
