@@ -1,15 +1,21 @@
 <template lang="html">
   <div>
     <Banner :sightName="sightName" :bannerImg="bannerImg"></Banner>
+    <Header></Header>
+    <List :categoryList="categoryList"></List>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import Banner from './components/banner'
+import Header from './components/header'
+import List from './components/list'
 export default {
   components: {
-    Banner
+    Banner,
+    Header,
+    List
   },
   data() {
     return {
