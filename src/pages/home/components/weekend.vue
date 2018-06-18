@@ -22,7 +22,7 @@
 }
 </script>
 
-<style scoped="scoped">	
+<style scoped="scoped">
 	.title{
 		font-weight: bold;
 	}
