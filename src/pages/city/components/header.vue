@@ -45,7 +45,8 @@
 			/*选中搜索的城市后返回首页*/
 			cityName(index) {
 				this.inputContent = this.$refs.itemtest[index].innerText;
-				alert("即将跳转到首页")
+				this.$store.commit('changeCityLocation',this.inputContent);
+				alert("即将跳转到首页");
 				setTimeout(this.$router.push('/home'),500);
 			},
 			/*外部引入函数方法声明*/

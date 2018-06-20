@@ -6,6 +6,7 @@ import Home from '@/pages/home/home'
 
 Vue.use(Router)
 
+
 export default new Router({
   routes: [
 	{
