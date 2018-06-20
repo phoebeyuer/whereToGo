@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="showIcon">
       <swiper-slide v-for="(page,index) in pages" :key="index">
         <div class="icon"
              v-for="item in page"
@@ -38,11 +38,11 @@
           pages[page].push(item)
         })
         return pages
+      },
+      showIcon() {
+        return this.list.length
       }
-    },
-    components: {},
-    methods: {},
-    watch: {}
+    }
   }
 </script>
 
