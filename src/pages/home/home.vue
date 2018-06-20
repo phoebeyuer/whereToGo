@@ -42,11 +42,11 @@
       this.getHomeInfo()
     },
     components: {
-      HomeRecommend,
-      HomeWeekend,
       HomeHeader,
       HomeSwiper,
-      HomeIcons
+      HomeIcons,
+      HomeRecommend,
+      HomeWeekend
     }
   }
 </script>
