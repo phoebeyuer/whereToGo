@@ -13,7 +13,7 @@
 		},
 		computed: {
 			cityLocation() {
-				return this.$store.state.cityLocation;
+				return this.$store.state['city'].cityLocation;
 			}
 		}
 

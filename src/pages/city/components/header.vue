@@ -12,7 +12,6 @@
 		<div class="search-result" v-show="showCity">
 			<ul>
 				<li class="city-item" :key="index" v-for="(item,index) in items" @click = "cityName(index)" ref="itemtest">{{item.name}}</li>
-<!-- 				<li class="city-item" index = "2" @click = "cityName">广东省</li> -->
 			</ul>
 		</div>
 	</div>
@@ -45,7 +44,7 @@
 			/*选中搜索的城市后返回首页*/
 			cityName(index) {
 				this.inputContent = this.$refs.itemtest[index].innerText;
-				this.$store.commit('changeCityLocation',this.inputContent);
+				this.$store.commit('city/changeCityLocation',this.inputContent);
 				alert("即将跳转到首页");
 				setTimeout(this.$router.push('/home'),500);
 			},
