@@ -60,11 +60,11 @@ export default {
     },
     // 直接提交 mutation ，不可以在 mutation 中执行异步操作
     myCommit() {
-      this.$store.commit('city/ADD_STATE_TEST')
+      this.$store.commit('city/ADD_STATE_TEST') // city 是 modules 名
     },
     // 通过 action 提交 mutation ，可以在 action 中执行异步操作
     myAction() {
-      this.$store.dispatch('city/addStateAction')
+      this.$store.dispatch('city/addStateAction') // city 是 modules 名
     }
   }
 
