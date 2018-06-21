@@ -1,23 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import City from '@/pages/city/city'
-import Home from '@/pages/home/home'
-
 Vue.use(Router)
 
 
 export default new Router({
+  mode:'history',
+  /*异步加载组件*/
   routes: [
 	{
 	    path: '/',
 	    name: 'city',
-	    component: City
+	    component: ()=>import('@/pages/city/city')
     },
     {
     	path: '/home',
     	name: 'home',
-    	component: Home
+    	component: ()=>import('@/pages/home/home')
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: ()=>import('@/pages/detail/detail')
     }
   ]
 })

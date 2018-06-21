@@ -1,25 +1,36 @@
-<template>
+<template lang="html">
 	<div>
-		<div>{{cityLocation}}</div>
+		 <div class="">
+   			 <Home-Header></Home-Header>
+  		</div>
+  		<div>
+			<div>{{cityLocation}}</div>
+		</div>
 	</div>
 </template>
 
 <script>
-	export default{
-		data() {
-			return {
-				
-			}			
-		},
-		computed: {
-			cityLocation() {
-				return this.$store.state['city'].cityLocation;
-			}
-		}
+import HomeHeader from './components/header'
 
+export default {
+	components: {
+	    HomeHeader
+	}, 
+
+	data() {
+		return {
+			
+		}			
+	},
+	computed: {
+		cityLocation() {
+			return this.$store.state['city'].cityLocation;
+		}
 	}
+}
 </script>
 
-<style scoped>
-	
+<style lang="stylus" scoped>
+
 </style>
+
