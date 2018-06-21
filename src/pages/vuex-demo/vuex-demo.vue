@@ -80,6 +80,10 @@ export default {
       color: #666;
       display: block;
       padding: 20px;
+      &:hover{
+        background-color: #F2AA2E;
+        color: #fff;
+      }
     }
 
     &.data{
