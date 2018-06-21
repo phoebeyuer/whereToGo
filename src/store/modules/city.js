@@ -12,14 +12,19 @@ const city = {
       // 显示 Loading 界面
       state.test += 1
     },
+    ADD_STATE_TEST(state) {
+      state.test += 1
+    }
   },
   actions: {
     // #region 测试 Action
     testAction: makeAction(ActionTypes.TEST_ACTION),
     // #endregion 测试 Action
+    addStateAction: makeAction('ADD_STATE_TEST')
   },
   getters: {
-    getTestData: state => state.test
+    getTestData: state => state.test,
+    getDoubleData: state => state.test * 2
   }
 }
 
