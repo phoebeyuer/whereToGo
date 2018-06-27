@@ -12,6 +12,7 @@ const portfinder = require('portfinder')
 const express = require('express')
 const app = express()
 const appData = require('./../static/mock/city.json')
+const detailData = require('./../static/mock/detail.json')
 var router = express.Router()
 app.use('/api',router)
 
@@ -32,6 +33,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         res.json({
           errno: 0,
           data: appData
+        })
+      }),
+      app.get('/api/detail',(req,res) =>{
+        res.json({
+          errno: 0,
+          data: detailData
         })
       })
     },

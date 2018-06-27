@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="detailHeader">
     <div class="header-abs">
-      <span class="iconfont back-icon">&#xe624;</span>
+      <span class="iconfont back-icon" @click="goToIndex">&#xe624;</span>
     </div>
     <div class="header-fixed" :style="opacityStyle" v-show="!show">
       <div class="header-fixed-abs">
@@ -22,6 +22,11 @@ export default {
       opacityStyle:{
           opacity:0
       }
+    }
+  },
+  methods: {
+    goToIndex() {
+      this.$router.push('/');
     }
   }
 }

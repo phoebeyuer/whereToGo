@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getDetailInfo() {
-      axios.get('/api/detail.json').then(this.getDetailInfoSuccess)
+      axios.get('/static/mock/detail.json').then(this.getDetailInfoSuccess)
     },
     getDetailInfoSuccess(res) {
       console.log(res)
@@ -47,3 +47,4 @@ export default {
 
 <style lang="css">
 </style>
+

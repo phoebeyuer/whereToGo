@@ -44,6 +44,7 @@
 		methods: {
 			getCityData(){
 				axios.get('/api/index').then((res)=>{
+					console.log(res);
 					var cityData = res.data;
 					this.cities = cityData.data.data.cities;
 					this.hotCities = cityData.data.data.hotCities;

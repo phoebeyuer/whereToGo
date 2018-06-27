@@ -39,14 +39,14 @@
 		},
 		methods: {
 			gotoHome() {
-				this.$router.push('/home');
+				this.$router.push('/');
 			},
 			/*选中搜索的城市后返回首页*/
 			cityName(index) {
 				this.inputContent = this.$refs.itemtest[index].innerText;
 				this.$store.commit('city/changeCityLocation',this.inputContent);
 				alert("即将跳转到首页");
-				setTimeout(this.$router.push('/home'),500);
+				setTimeout(this.$router.push('/'),500);
 			},
 			/*外部引入函数方法声明*/
 			funConvertPinyin:function() {
