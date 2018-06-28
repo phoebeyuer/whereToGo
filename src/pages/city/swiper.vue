@@ -9,6 +9,7 @@
 </template>
 
 <script>
+    import VueAwesomeSwiper from 'swiper'
     export default {
         data() {
             return {

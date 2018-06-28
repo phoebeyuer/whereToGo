@@ -3,7 +3,7 @@
     <div class="city-wrap">
       <dl class="city-list" v-for="(cities, index) in cityListFilter" :key="index" :ref="index">
         <dt class="city-initials" v-if="cities.length">{{ index }}</dt>
-        <dd class="city-item" v-for="city in cities" :key="city.id">{{ city.name }}</dd>
+        <dd class="city-item" v-for="city in cities" :key="city.id" @click="goToHome($event)">{{ city.name }}</dd>
       </dl>
     </div>
   </div>
@@ -26,8 +26,8 @@ export default {
   },
   watch: {
     letter() {
-      // console.log('letter change to: ', this.letter)
-      this.ScrollToLetter(this.letter)
+      // console.log('letter change to: ', this.letter) 
+      this.ScrollToLetter(this.letter);
     }
   },
   mounted () {
@@ -45,8 +45,10 @@ export default {
         })
 
         // 滚动到初始设定位置
-        this.ScrollToLetter(this.letter)
-      })
+        // this.ScrollToLetter(this.letter)
+        this.ScrollToLetter('A');
+      }),
+      console.log(this.letter);
     })
   },
   computed: {
@@ -64,6 +66,14 @@ export default {
     }
   },
   methods: {
+    // 跳转到首页并传值
+    goToHome(e) {
+      this.$store.commit('city/changeCityLocation',e.target.innerText);
+      // this.ScrollToLetter(this.letter);
+      this.ScrollToLetter('A');
+      console.log(e.target.innerText);
+      setTimeout(this.$router.push('/'),500);
+    },
     // 实现功能
     // 解析父级传入的城市数据json；根据父级传入的字母跳转到相应位置；根据父级传入的文本筛选列表；
     GetCityList() {

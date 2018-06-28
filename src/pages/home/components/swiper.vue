@@ -1,4 +1,5 @@
 <template>
+  <div class="swiper.container">
   <div class="wrapper">
     <swiper :options="swiperOption" v-if="showSwiper">
       <swiper-slide v-for="item in list" :key="item.id">
@@ -8,9 +9,11 @@
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
+</div>
 </template>
 
 <script>
+  import VueAwesomeSwiper from 'swiper'
   export default {
     props:{
       list:Array
@@ -32,7 +35,8 @@
       showSwiper() {
         return this.list.length
       }
-    }
+
+    }   
   }
 </script>
 

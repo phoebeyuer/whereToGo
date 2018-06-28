@@ -3,14 +3,14 @@
         <div class="curCity">
             <p class="cur-city-title">当前城市</p>
             <div class="cur-city-content">
-                <div class="box" v-if="curCity">{{ curCity }}</div>
+                <div class="box" v-if="curCity" @click="curcityGoToHome">{{ curCity }}</div>
                 <div class="box" v-else>加载中...</div>
             </div>
         </div>
         <div class="hotCity">
             <p class="hot-city-title">热门城市</p>
             <ul class="hot-city-wrap">
-                <li v-for="city in hotCities" :key="city.id" @click="curCity = city.name"><div>{{city.name}}</div></li>
+                <li v-for="(city,index) in hotCities" :key="city.id" @click="hotcityGoToHome($event)"><div>{{city.name}}</div></li>
             </ul>
         </div>
         <div id="allmap"></div>
@@ -29,6 +29,7 @@ export default {
     data() {
         return {
             curCity: '',
+            city: []
         }
     },
     created() {
@@ -42,8 +43,18 @@ export default {
         }
         var myCity = new BMap.LocalCity();
         myCity.get(myFun);
+        // console.log(this.city);
     },
     methods: {
+        curcityGoToHome() {
+            this.$store.commit('city/changeCityLocation',this.curCity);
+            setTimeout(this.$router.push('/'),500);
+        },
+        hotcityGoToHome(e) {
+            this.curCity = e.target.innerText;
+            this.$store.commit('city/changeCityLocation',this.curCity);
+            setTimeout(this.$router.push('/'),500);
+        },
         initHotCity() {
             // axios.get('static/mock/city.json').then(res => {
             //     let data = res.data;

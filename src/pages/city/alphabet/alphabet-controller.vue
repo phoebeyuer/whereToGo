@@ -31,8 +31,8 @@ export default {
   computed: {
   },
   updated () {
-    this.startY = this.$refs['A'][0].offsetTop
-    console.log('startY: ', this.startY)
+    this.startY = this.$refs['A'][0].offsetTop;
+    console.log('startY: ', this.startY);
   },
   methods: {
     // 实现功能
