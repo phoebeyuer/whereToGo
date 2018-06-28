@@ -10,7 +10,7 @@
     <router-link to="/city">
       <div class="header-right">
         {{cityLocation}}
-        <!-- <span class="iconfont arrow-icon">&#xe64a;</span> -->
+         <!--<span class="iconfont arrow-icon">&#xe64a;</span>-->
       </div>
     </router-link>
   </div>
@@ -64,6 +64,6 @@
       color: #fff
       text-align center
     .arrow-icon
-        font-size .24rem 
+        font-size .24rem
 
 </style>

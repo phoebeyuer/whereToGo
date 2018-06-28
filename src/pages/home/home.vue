@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <HomeHeader></HomeHeader>
-    <HomeSwiper :list="swiperList"></HomeSwiper>
+    <HomeSwiper :list="swiperList" ref="HS"></HomeSwiper>
     <HomeIcons :list="iconList"></HomeIcons>
     <HomeRecommend :recommed='recommeds'></HomeRecommend>
     <HomeWeekend :recommed='recommeds'></HomeWeekend>
@@ -32,7 +32,7 @@
         axios.get('/static/mock/index.json')
           .then(this.getHomeInfoSuss)
       },
-      getHomeInfoSuss: function (res) {
+      getHomeInfoSuss (res) {
         this.recommeds = res.data.recommed
         this.swiperList = res.data.swiperList
         this.iconList = res.data.iconList

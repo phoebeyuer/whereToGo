@@ -20,7 +20,11 @@
         swiperOption: {
           pagination: '.swiper-pagination',
           loop: true,
-          autoplay:2000
+          autoplay:{
+            delay: 2000,
+            stopOnLastSlide:false,
+            disableOnInteraction:false
+          }
         }
       }
     },
@@ -38,7 +42,7 @@
   .wrapper
     width 100%
     height 0
-    padding-bottom 31.25%
+    padding-bottom 31.6%
     overflow hidden
     background #eee
     .swiper-img
