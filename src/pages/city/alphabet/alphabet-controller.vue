@@ -24,6 +24,10 @@ export default {
       touchLetter: ''
     }
   },
+  activated() {
+    console.log("just a test");
+    this.touchLetter = '';
+  },
   mounted () {
     this.startY = this.$refs['A'][0].offsetTop
     console.log('startY: ', this.startY)

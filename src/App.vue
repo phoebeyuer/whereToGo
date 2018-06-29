@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <!-- <keep-alive> -->
+    <keep-alive include='sleep'>
       <router-view/>
-    <!-- </keep-alive> -->
+    </keep-alive>
+
   </div>
 </template>
 

@@ -13,7 +13,6 @@
 </template>
 
 <script>
-  import VueAwesomeSwiper from 'swiper'
   export default {
     props:{
       list:Array
@@ -30,6 +29,11 @@
           }
         }
       }
+    },
+    activated() {
+
+        return this.list.length;
+
     },
     computed:{
       showSwiper() {

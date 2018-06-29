@@ -12,6 +12,7 @@ import Banner from './components/banner'
 import Header from './components/header'
 import List from './components/list'
 export default {
+  name: 'sleep',
   components: {
     Banner,
     Header,
