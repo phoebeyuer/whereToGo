@@ -4,8 +4,9 @@
       <span class="iconfont back-icon">&#xe624;</span>
     </div>
     <div class="header-input">
-      <span class="iconfont">&#xe632;</span>
-      输入城市/景点/游玩主题
+<!--       <span class="iconfont">&#xe632;</span>
+      输入城市/景点/游玩主题 -->
+      <input  class="input-text" type="text" :placeholder="searchTip"/>
     </div>
     <router-link to="/city">
       <div class="header-right">
@@ -19,7 +20,9 @@
 <script>
   export default {
     data() {
-      return {}
+      return {
+        searchTip: "输入城市/景点/游玩主题"
+      }
     },
     computed: {
       cityLocation() {
